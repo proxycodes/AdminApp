@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('aa-home');
 });
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::view('contact', '/contact');  //the shortcut also works like above about page.
