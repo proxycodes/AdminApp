@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,10 @@ Route::get('/', function () {
     return view('aa-home');
 });
 
+Route::get('/login', [AuthController::class, 'viewLogin'])->name('viewLogin');
+Route::get('/register', [AuthController::class, 'viewRegister'])->name('viewRegister');
+
+/*
 
 Route::get("/contact", function () {
     return redirect("about"); // contact page should redirect to about as well
@@ -28,3 +33,4 @@ Route::get('/about', function () {
 });
 
 //Route::view('contact', '/contact');  //the shortcut also works like above about page.
+*/
