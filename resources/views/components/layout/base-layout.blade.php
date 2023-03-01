@@ -13,18 +13,17 @@
         
         <x-common.header></x-common.header>
         <div class="spacer">&nbsp;</div>
-        <div style="display:flex">
-        
-            <!-- x-common.main-nav></x-common.main-nav -->
-
-            <div class="main-body">
-                <div class="container">
-                    <h3>Admin App - {{$pageHeading}}</h3>
-    
-                    {{$mainBody}}
-
+        <div class="container-1">
+            <!-- <x-common.main-nav></x-common.main-nav> -->
+            <div class="container main-container-2">
+                <div class="row">
+                   <div class="col"> <h3>Admin App - {{$pageHeading}}</h3></div>
                 </div>
+
+                {{$mainBody}}
+
             </div>
+            
         </div>
 
         <x-common.footer></x-common.footer>

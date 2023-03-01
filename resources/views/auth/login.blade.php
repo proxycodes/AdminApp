@@ -3,34 +3,41 @@
     <x-slot name="pageSeoTitle">Log in</x-slot>
     <x-slot name="pageHeading">Log in</x-slot>
     
-    <x-slot name="mainBody">        
-        <form>
-
-            <div class="row g-2">
-                <div class="col p-1 input-group">
-                    <span class="input-group-text" id="basic-addon1">
-                        <i class="bi bi-envelope-at"></i>
-                    </span>
-                    <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="Enter Login ID">
-                </div>    
-                <div class="col p-1"><label for="userEmail" class="form-label"></label></div>
-            </div>
-
-            <div class="row g-2">
-                <div class="col p-1 input-group">
-                    <span class="input-group-text" id="basic-addon1">
-                        <i class="bi bi-key"></i>
-                    </span>
-                    <input type="password" class="form-control" id="userPassword"  placeholder="Enter Password" size="50">
-                </div>
-                <div class="col p-1"><label for="userPassword" class="form-label"></label></div>
+    <x-slot name="mainBody">     
+        <form method="post" action="/login">
+  
+            @csrf
+            <x-forms.formrow-2col-withIcon>
+                <x-slot name="formRowInputIcon">
+                    <i class="bi bi-envelope-at"></i>
+                </x-slot>
+                <x-slot name="formRowInputField">
+                    <input type="text" class="form-control" id="userEmail" name="userEmail" aria-describedby="emailHelp" placeholder="Enter Login ID">
+                </x-slot>
+                <x-slot name="formRowInputError">
+                    @error('userEmail'){{$message}} @enderror
+                </x-slot>
+            </x-forms.formrow-2col-withIcon>
             
-            </div>
-            <div class="row g-2">
-                <div class="col p-1"><button type="submit" class="btn btn-primary"><span class="bi bi-box-arrow-in-right"></span> Submit</button></div>
-                <div class="col p-1"></div>
-                
-            </div>
+            <x-forms.formrow-2col-withIcon>
+                <x-slot name="formRowInputIcon">
+                    <i class="bi bi-key"></i>
+                </x-slot>
+                <x-slot name="formRowInputField">
+                    <input type="password" class="form-control" id="userPassword" name="userPassword"  placeholder="Enter Password">
+                </x-slot>
+                <x-slot name="formRowInputError">
+                    @error('userpassword'){{$message}} @enderror
+                </x-slot>
+            </x-forms.formrow-2col-withIcon>
+
+            <x-forms.formrow-1col>
+                <x-slot name="formRowInputField">
+                    <button type="submit" class="btn btn-primary"><span class="bi bi-box-arrow-in-right"></span> Submit</button>
+                    <a href="/auth?forgot=true" class="forgot-password-link">Reset Password</a>
+                </x-slot>
+            </x-forms.formrow-1col>
+            
         </form>
     </x-slot>
     

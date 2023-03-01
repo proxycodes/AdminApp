@@ -1,9 +1,9 @@
-        <!--div>
+        <div class="nav-container-2" style="border:1px solid red;">
             <a class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                 Menu
             </a>
 
-            <ul class="nav flex-column" style="border:1px solid #ccc">
+            <ul class="nav flex-column">
 
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -35,7 +35,7 @@
 
 
 
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-nav-container-2 offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -72,4 +72,4 @@
 
 
             </div>
-        </div-->
+        </div>

@@ -11,9 +11,23 @@ class AuthController extends Controller
         return view ("auth.login");
     }
 
-    public function doLogin()
+    public function doLogin(Request $request)
     {
-        return view ("auth.login");
+        //dd($request);
+        $request->validate([
+            "userEmail"=>"required|email",
+            "userpassword"=>"required"
+        ]);
+        
+        // if(\Auth::attempt($request->only('userEmail', 'userpassword'))){
+        //     return redirect('aa-home');
+        // }
+
+        //return redirect('login')->withError("invalid Details");
+
+        //return $request->input();
+        
+        //return view ("auth.login");
     }
 
     public function viewRegister()

@@ -19,6 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [AuthController::class, 'viewLogin'])->name('viewLogin');
+Route::post('/login', [AuthController::class, 'doLogin'])->name('doLogin');
+
 Route::get('/register', [AuthController::class, 'viewRegister'])->name('viewRegister');
 
 /*
